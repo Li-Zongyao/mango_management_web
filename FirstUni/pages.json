@@ -1,26 +1,86 @@
 {
+// pages.json https://www.jianshu.com/p/d2900005b32a
+	"easycom": {
+	    "^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 
-	// pages.json
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": "登录页"
+					"navigationBarTitleText": "Login Page"
 			}
 		},
+
+	// pages.json
 		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
-		}
+		},		
 
-				
+
+		//uni-app https://ext.dcloud.net.cn/plugin?id=98
+		{
+			"path": "pages/tabbar/tabbar-1/tabbar-1",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-2/tabbar-2",
+			"style": {}
+		},
+		{
+			"path": "pages/tabbar/tabbar-3/tabbar-3",
+			"style": {}
+		},
+		{
+			"path": "pages/tabbar/tabbar-4/tabbar-4",
+			"style": {}
+		},
+		{
+			"path": "pages/tabbar/tabbar-5/tabbar-5",
+			"style": {}
+		}				
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"color":"#676767",
+		"selectedColor":"#0088ff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/img/tabbar/home.png",
+				"selectedIconPath": "static/img/tabbar/homeactive.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tabbar/tabbar-2/tabbar-2",
+				"iconPath": "static/img/tabbar/guanzhu.png",
+				"selectedIconPath": "static/img/tabbar/guanzhuactive.png",
+				"text": "关注"
+			},
+			{
+				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
+				"iconPath": "static/img/tabbar/news.png",
+				"selectedIconPath": "static/img/tabbar/newsactive.png",
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/tabbar/tabbar-5/tabbar-5",
+				"iconPath": "static/img/tabbar/me.png",
+				"selectedIconPath": "static/img/tabbar/meactive.png",
+				"text": "我"
+			}
+		]
 	}
 }

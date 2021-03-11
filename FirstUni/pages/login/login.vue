@@ -1,11 +1,14 @@
 // pages/login/login.vue
 <template>
-	<view class="bg">
+	
+	<view class="bg">		
 		<view class="login">
-			<image src="http://www.logofree.cn/uploads/image/20190430/14/2-86_3686.jpg"></image>
-			<view><input type="text" placeholder="用户名" v-model="nickname" /></view>
-			<view><input type="password" placeholder="密码" v-model="password" /></view>
-			<view><button type="primary" @tap="login">登录</button></view>
+			
+			<image src="../../static/1121.jpg"></image>
+			<view><input type="text" placeholder="username" v-model="nickname" /></view>
+			<view><input type="password" placeholder="password" v-model="password" /></view>
+			<view><button type="primary" @tap="login">login</button></view>
+			<view><button type="primary" @tap="test">only for test</button></view>
 		</view>
 	</view>
 </template>
@@ -14,11 +17,17 @@
 	export default {
 		data() {
 			return {
-				nickname: "",
-				password: ""
+				nickname: "please input nickname",
+				password: "please input password"
 			};
 		},
 		methods: {
+			test() {
+				uni.switchTab({
+					url: '/pages/index/index'
+				});
+				uni.setStorageSync("nickname", this.nickname);
+			},
 			login() {
 				uni.request({
 					url: "http://47.92.50.43:8888/user/login",
@@ -28,7 +37,7 @@
 						pwd: this.password
 					},
 					success: (res) => {
-						if (res.data.success) {
+						 if (res.data.success) {
 							uni.showToast({
 								title: '登录成功',
 								duration: 2000
@@ -47,14 +56,14 @@
 					},
 
 				})
-			}
+			},		
 		}
 	}
 </script>
 
 <style lang="scss">
 	.bg {
-		background: linear-gradient(to bottom, skyblue, #fff 50%);
+		background: linear-gradient(to bottom, skyblue, #52F98A 70%);
 		height: 93vh;
 		display: flex;
 		align-items: center;
@@ -84,7 +93,7 @@
 				width: 170rpx;
 				height: 170rpx;
 				border-radius: 50%;
-				margin-left: 35%;
+				margin-left: 50%;
 			}
 		}
 	}
