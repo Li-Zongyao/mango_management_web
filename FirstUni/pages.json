@@ -12,6 +12,13 @@
 					"navigationBarTitleText": "Login Page"
 			}
 		},
+		
+		{
+			"path": "pages/register/register",
+			"style": {
+				"navigationBarTitleText": "register"
+			}
+		},	
 
 	// pages.json
 		{
@@ -19,7 +26,20 @@
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
-		},		
+		},	
+			
+		{
+			"path": "pages/usercenter/usercenter",
+			"style": {
+				"navigationBarTitleText": "usercenter"
+			}
+		},	
+		{
+			"path": "pages/usercenter/uinfo",
+			"style": {
+				"navigationBarTitleText": "info"
+			}
+		},
 
 
 		//uni-app https://ext.dcloud.net.cn/plugin?id=98
@@ -76,10 +96,10 @@
 				"text": "消息"
 			},
 			{
-				"pagePath": "pages/tabbar/tabbar-5/tabbar-5",
+				"pagePath": "pages/usercenter/usercenter",
 				"iconPath": "static/img/tabbar/me.png",
 				"selectedIconPath": "static/img/tabbar/meactive.png",
-				"text": "我"
+				"text": "usercenter"
 			}
 		]
 	}
