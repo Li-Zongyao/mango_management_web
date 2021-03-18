@@ -17,8 +17,8 @@
 	export default {
 		data() {
 			return {
-				nickname: "please input nickname",
-				password: "please input password"
+				nickname: "account1",
+				password: "samkuo"
 			};
 		},
 		methods: {
@@ -30,22 +30,27 @@
 			},
 			login() {
 				uni.request({
-					url: "http://47.92.50.43:8888/user/login",					/* Post传参地址及date */
+					url: "/apis/login",					/* Post传参地址及date */
 					method: "POST",
+				
 					data: {
-						username: this.nickname,
-						pwd: this.password
+						account: this.nickname,
+						password: this.password
 					},
 					success: (res) => {
-						 if (res.data.success) {
+						console.log('request success---->', res.data);
+						if (res.data = 'log in successfully.') {
 							uni.showToast({
 								title: '登录成功',
 								duration: 2000
 							});
 							uni.setStorageSync("nickname", this.nickname)		/* 保存名字并跳转 */
-							uni.redirectTo({
-								url: "../index/index"
+							uni.switchTab({
+								url: '/pages/index/index'
 							});
+							// uni.redirectTo({
+							// 	url: "../index/index"
+							// });
 						} else {
 							uni.showToast({
 								title: '用户名或密码错误',
