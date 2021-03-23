@@ -64,15 +64,15 @@
 					return;
 				}
 				uni.request({
-					url: "http://47.92.50.43:8888/user/login",		/* 注册并传参 */
+					url: "/apis/signup",		/* 注册并传参 */
 					method: "POST",
 					data: {
-						username: this.username,
-						password: this.password,
-						repassword: this.repassword,
+						userAccount: this.username,
+						userPassword: this.password,
 					},
 					success: (res) => {
-						 if (res.data.success) {
+						console.log('request success---->', res.data);
+						 if (res.data = 'You have successful SignUp!') {
 							uni.showToast({
 								title: '注册成功',
 								duration: 2000,

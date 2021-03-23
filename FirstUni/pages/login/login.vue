@@ -49,7 +49,7 @@
 								url: '/pages/index/index'
 							});
 							// uni.redirectTo({
-							// 	url: "../index/index"
+							// 	url: "../indeAx/index"
 							// });
 						} else {
 							uni.showToast({
