@@ -40,6 +40,12 @@
 				"navigationBarTitleText": "info"
 			}
 		},
+		{
+			"path": "pages/index/additem",
+			"style": {
+				"navigationBarTitleText": "additem"
+			}
+		},
 
 
 		//uni-app https://ext.dcloud.net.cn/plugin?id=98

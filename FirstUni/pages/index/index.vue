@@ -5,7 +5,7 @@
 		<view class="main">
 			<!--左侧 右侧 保留功能-->
 			<view id="head1" class="flex justify-around margin-top-sm ">
-				<navigator url="supplierview" class="flex align-center">					
+				<navigator url="additem" class="flex align-center">					
 					<view class="cuIcon-peoplelist text-white" style="font-size: 50upx"></view>
 				</navigator>
 				<view></view><view></view><view></view><view></view>

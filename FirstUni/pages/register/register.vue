@@ -76,7 +76,7 @@
 							uni.showToast({
 								title: '注册成功',
 								duration: 2000,
-								title: data.msg
+								title: 'success',
 							});
 							
 							uni.reLaunch({
