@@ -33,17 +33,29 @@
 			"style": {
 				"navigationBarTitleText": "usercenter"
 			}
-		},	
+		},
+		
+		//用户信息
 		{
 			"path": "pages/usercenter/uinfo",
 			"style": {
 				"navigationBarTitleText": "info"
 			}
 		},
+		
+		//新增物品类型
 		{
 			"path": "pages/index/additem",
 			"style": {
 				"navigationBarTitleText": "additem"
+			}
+		},
+		
+		//新增物品数量
+		{
+			"path": "pages/index/addStorage",
+			"style": {
+				"navigationBarTitleText": "addStorage"
 			}
 		},
 

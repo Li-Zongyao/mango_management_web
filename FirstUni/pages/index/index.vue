@@ -19,12 +19,12 @@
 
 			<!--两个功能按钮-->
 			<view id="btn" class="flex justify-around margin-top-sm">
-				<navigator class="btn-box bg-gradual-blue flex align-center justify-center"  @tap="instorage">
-					<text class="text-xxl text-shadow">入库登记</text>
-					<text class="cuIcon-cart padding-left-xs" style="font-size: 90upx;opacity: 0.2"></text>
+				<navigator class="btn-box bg-gradual-blue flex align-center justify-center"  url="addStorage">
+					<text class="text-xxl text-shadow Text-AddStorage"> Add Storage</text>
+					<text class="cuIcon-cart " style="padding-left: 0upx;font-size: 90upx;opacity: 0.2"></text>
 				</navigator>
 				<view class="btn-box bg-gradual-green flex align-center justify-center" @tap="outstorage">
-					<text class="text-xxl text-shadow">出库登记</text>
+					<text class="text-xxl text-shadow ">出库登记</text>
 					<text class="cuIcon-deliver padding-left-xs" style="font-size: 90upx;opacity: 0.2"></text>
 				</view>
 			</view>
@@ -125,6 +125,11 @@
 		height: 300rpx;
 		width: 100%;
 	}
+	.Text-AddStorage{
+		
+		padding-left:20px
+	}
+	
 	.bghead{
 		position: absolute;
 		left: 0;

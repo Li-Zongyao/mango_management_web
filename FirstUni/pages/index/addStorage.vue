@@ -3,7 +3,7 @@
 		<u-form :model="model" ref="uForm" :errorType="errorType">
 			<u-form-item  label-width="150"
 			 :label-position="labelPosition" label="物品名称" prop="name">
-				<u-input :border="border" placeholder="Please input NAME of the item" v-model="model.name" type="text"></u-input>
+				<u-input :border="border" placeholder="Please input NAME" v-model="model.name" type="text"></u-input>
 			</u-form-item>
 
 			<u-form-item :label-position="labelPosition" label="sellerID" prop="sellerID" label-width="150">
@@ -19,10 +19,12 @@
 			</u-form-item>
 			
 			<u-form-item :label-position="labelPosition" label="price" prop="price" label-width="150">
-				<u-input :border="border" placeholder="Please input price" v-model="model.price" type="text"></u-input>
+				<u-input :border="border" placeholder="Please input  price" v-model="model.price" type="text"></u-input>
 			</u-form-item>
 			
-
+			<u-form-item :label-position="labelPosition" label="number" prop="number" label-width="150">
+				<u-input :border="true" placeholder="Please input  number of item" v-model="numberofitem" type="text"></u-input>
+			</u-form-item>
 			
 		</u-form>
 
@@ -55,7 +57,7 @@
 				selectList: [],
 				unitList: [],
 				unitListShow: false,
-				number:2,
+				numberofitem:2,
 				username:'',
 			}
 
@@ -70,7 +72,7 @@
 			submit() {
 						console.log(_this.username),
 						uni.request({
-							url:'/apis/item/addNewItem',
+							url:'/apis/item/addNewItemIntoStorage?userAccount='+ _this.username +'&number='+ _this.numberofitem,
 							method: "POST",		
 							data: {	
 								itemName:_this.model.name,
