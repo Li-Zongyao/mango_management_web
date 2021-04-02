@@ -58,6 +58,14 @@
 				"navigationBarTitleText": "addStorage"
 			}
 		},
+		
+		//新增物品数量
+		{
+			"path": "pages/usercenter/userhabit",
+			"style": {
+				"navigationBarTitleText": "userhabit"
+			}
+		},
 
 
 		//uni-app https://ext.dcloud.net.cn/plugin?id=98

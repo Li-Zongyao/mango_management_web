@@ -3,9 +3,10 @@
 		<view class="logo" >
 			<view class="logo-title">
 				<text class="uer-name">Hi，{{name}}</text>
-				<text class="go-login navigat-arrow" v-if="!login">&#xe65e;</text>
+				<text class="go-login navigat-arrow">&#xe65e;</text>
 			</view>
 		</view>
+		
 		<view class="center-list">			
 			<view class="center-list-item border-bottom" @tap="relogin">
 				<text class="list-icon">&#xe60f;</text>
@@ -20,6 +21,18 @@
 			</view>			
 		</view>
 		
+		
+		<view class="center-list">
+			
+			<navigator url="userhabit" class="center-list-item border-bottom">  	
+				<text class="list-icon">&#xe60b;</text>
+				<text class="list-text">用户购物习惯</text>
+				<text class="habit">  Buy on {{shopdate}}</text>				
+				<text class="navigat-arrow">&#xe65e;</text>
+			</navigator>
+			
+		</view>
+		
 		<view class="center-list">
 			
 			<navigator url="uinfo" class="center-list-item border-bottom">  	<!-- app信息 -->
@@ -29,6 +42,8 @@
 			</navigator>
 			
 		</view>
+		
+
 		<!-- <view class="center-list">
 			<view class="center-list-item border-bottom">
 				<text class="list-icon">&#xe60b;</text>
@@ -56,18 +71,36 @@
 		data() {
 			return {
 				avatarUrl: "../../static/uni-center/logo.png",
-				uerInfo: {}
+				uerInfo: {},
+				shopdate:"",
 			}
 		},
 		methods: {
 			onLoad() {
-				this.name = uni.getStorageSync('nickname')
+				this.name = uni.getStorageSync('nickname');
+				this.getShopDate();
 			},
 			relogin() {
 				uni.navigateTo({
 					url: '/pages/login/login'
+				});	
+			},
+			
+			getShopDate(){
+				console.log('getshopdate')
+				uni.request({
+					url: '/apis/getShopDate',
+					method: "GET",
+					
+					data: {						
+						userAccount:this.name
+					},
+					
+					success: data => {
+						console.log(data);
+						this.shopdate = data.data;						
+					}
 				});
-				
 			}
 
 		}
@@ -89,6 +122,11 @@
 
 	page {
 		background-color: #f8f8f8;
+	}
+
+	.habit{
+		padding: 10upx;
+		
 	}
 
 	.center {

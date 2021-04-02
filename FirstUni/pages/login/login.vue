@@ -39,7 +39,7 @@
 					},
 					success: (res) => {
 						console.log('request success---->', res.data);
-						if (res.data = 'log in successfully.') {
+						if (res.data === 'log in successfully.') {
 							uni.showToast({
 								title: '登录成功',
 								duration: 2000
