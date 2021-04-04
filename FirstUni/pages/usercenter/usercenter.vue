@@ -27,7 +27,7 @@
 			<navigator url="userhabit" class="center-list-item border-bottom">  	
 				<text class="list-icon">&#xe60b;</text>
 				<text class="list-text">用户购物习惯</text>
-				<text class="habit">  Buy on {{shopdate}}</text>				
+				<text class="habit">  Buy on {{WeekDay}}</text>				
 				<text class="navigat-arrow">&#xe65e;</text>
 			</navigator>
 			
@@ -73,12 +73,15 @@
 				avatarUrl: "../../static/uni-center/logo.png",
 				uerInfo: {},
 				shopdate:"",
+				userinfolist: [],
+				WeekDay: 'error',
 			}
 		},
 		methods: {
 			onLoad() {
 				this.name = uni.getStorageSync('nickname');
 				this.getShopDate();
+				this.shopDateSubstitute()
 			},
 			relogin() {
 				uni.navigateTo({
@@ -86,10 +89,12 @@
 				});	
 			},
 			
+
+			
 			getShopDate(){
 				console.log('getshopdate')
 				uni.request({
-					url: '/apis/getShopDate',
+					url: '/apis/user/getInfo',
 					method: "GET",
 					
 					data: {						
@@ -97,11 +102,37 @@
 					},
 					
 					success: data => {
-						console.log(data);
-						this.shopdate = data.data;						
+						console.log('233 ' + data);
+						this.userinfolist = data.data;	
+		
+						if(this.userinfolist.purchaseWeekDay === 0){this.WeekDay = 'Sunday'}
+						if(this.userinfolist.purchaseWeekDay === 1){this.WeekDay = 'Monday'}									
+						if(this.userinfolist.purchaseWeekDay === 2){this.WeekDay = 'Tuesday'}
+						if(this.userinfolist.purchaseWeekDay === 3){this.WeekDay = 'Wednesday'}									
+						if(this.userinfolist.purchaseWeekDay === 4){this.WeekDay = 'Thursday'}
+						if(this.userinfolist.purchaseWeekDay === 5){this.WeekDay = 'Friday'}									
+						if(this.userinfolist.purchaseWeekDay === 6){this.WeekDay = 'Saturday'}
+						
+						console.log('userinfolist == ' + this.userinfolist),
+						console.log('purchaseWeekDay == ' + this.userinfolist.purchaseWeekDay),
+						console.log('WeekDay == '+ this.WeekDay)
+												
+												
 					}
 				});
-			}
+				
+
+			},
+			
+			shopDateSubstitute(){			
+				if(this.userinfolist.purchaseWeekDay === 0){this.WeekDay === 'Sunday'}
+				if(this.userinfolist.purchaseWeekDay === 1){this.WeekDay === 'Monday'}									
+				if(this.userinfolist.purchaseWeekDay === 2){this.WeekDay === 'Tuesday'}
+				if(this.userinfolist.purchaseWeekDay === 3){this.WeekDay === 'Wednesday'}									
+				if(this.userinfolist.purchaseWeekDay === 4){this.WeekDay === 'Thursday'}
+				if(this.userinfolist.purchaseWeekDay === 5){this.WeekDay === 'Friday'}									
+				if(this.userinfolist.purchaseWeekDay === 6){this.WeekDay === 'Saturday'}														
+			},
 
 		}
 	}

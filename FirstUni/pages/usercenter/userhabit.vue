@@ -27,6 +27,7 @@
 				},
 				errorType: ['message'],
 				show: false,
+				dateNumberOfList: 100,
 				actionSheetList: [
 					{
 						text: 'Monday'
@@ -52,8 +53,7 @@
 				],
 			
 			}
-			
-			
+				
 
 		},
 		onLoad() {
@@ -69,16 +69,23 @@
 			},
 			
 			submit() {
+				if(_this.model.shopdate==='Sunday') 	{this.dateNumberOfList = 0}
+				if(_this.model.shopdate==='Monday')  	{this.dateNumberOfList = 1}
+				if(_this.model.shopdate==='Tuesday')	{this.dateNumberOfList = 2}
+				if(_this.model.shopdate==='Wednesday')	{this.dateNumberOfList = 3}
+				if(_this.model.shopdate==='Thursday')	{this.dateNumberOfList = 4}
+				if(_this.model.shopdate==='Friday')		{this.dateNumberOfList = 5}
+				if(_this.model.shopdate==='Saturday')	{this.dateNumberOfList = 6}
+
 						console.log(_this.username),
 						uni.request({
-							url:'/apis/addShopDate',
+							url:'/apis/user/editPurchaseDate?userAccount='+ _this.username + '&date=' + this.dateNumberOfList,
 							method: "POST",		
 							data: {	
 								postshopdate: _this.model.shopdate,
-
 							},
 							success: (res) => {	
-								if (res.data === '') {
+								if (res.data === 'update purchase date successfully') {
 									_this.$refs.uToast.show({
 										title: '更改成功',
 										type: 'success',
