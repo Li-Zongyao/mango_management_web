@@ -6,14 +6,16 @@
 				<u-input :border="border" placeholder="Please input NAME" v-model="model.name" type="text"></u-input>
 			</u-form-item> -->
 			
-			<u-form-item label-width="150" :label-position="labelPosition" label="List" prop="addNewItemName">
+<!-- 			<u-form-item label-width="150" :label-position="labelPosition" label="List" prop="addNewItemName">
 				<u-input v-model="model.addNewItemName" :type="selectType" :border="true" @click="show = true" />
 				<u-action-sheet :list="readFromActionSheetList" v-model="show" @click="actionSheetCallback"></u-action-sheet>
-			</u-form-item>	
+			</u-form-item> -->	
 			
 			<u-form-item label-width="150" :label-position="labelPosition" label="Item Picker" prop="addPickerNewItemName">
 	
-					<u-input v-model="model.addPickerNewItemName = readFromActionSheetList[index]" :type="selectType" :border="true" @click="show = true" />
+<!-- 				<u-button class="button-Item-Picker" v-model="model.addPickerNewItemName = readFromActionSheetList[index]" :type="selectType" :border="true" @click="show = true" />
+					<u-action-sheet :list="readFromActionSheetList" v-model="show" @click="actionSheetCallback"></u-action-sheet>
+					 -->
 					<picker @change="bindPickerChange" :value="index" :range="readFromActionSheetList" :border="border">
 						<view class="uni-input">{{readFromActionSheetList[index]}}</view>
 					</picker>
@@ -74,7 +76,7 @@
 				
 				//actionList专用
 				actionSheetList: [],				
-				readFromActionSheetList: [],
+				readFromActionSheetList: ['please choose a item'],
 				
 				show: false,
 							
@@ -106,15 +108,11 @@
 			//Picker专用函数
 			bindPickerChange: function(e) {
 				console.log('picker发送选择改变，携带值为', e.target.value)
-				this.index = e.target.value
-				
+				this.index = e.target.value				
 			},
-						
-			
-			
+									
 			//列表读取
-			actionSheetCallback(index) {
-				
+			actionSheetCallback(index) {				
 				this.model.addNewItemName = this.actionSheetList[index].itemName;
 			},
 			
@@ -138,17 +136,14 @@
 						for (let i = 0; i < this.actionSheetList.length; ++i){
 						this.readFromActionSheetList[i] = this.actionSheetList[i].itemName 	
 						}
-						console.log(this.readFromActionSheetList);
-						
-						//this.actionSheetList.text = this.data.itemName;		
-		
-					
+						console.log(this.readFromActionSheetList);							
 					}
 				});
 			},
 			
 			//提交货物数量更改
 			submit() {
+						this.model.addPickerNewItemName = this.readFromActionSheetList[this.index],
 						console.log(this.model.addPickerNewItemName),
 						uni.request({
 							url:'/apis/storage/EditStorageRemaining/?userAccount=' +  _this.username + '&remaining=' + _this.numberofitem + '&itemName=' + _this.model.addPickerNewItemName,
@@ -174,7 +169,6 @@
 										success() {
 											let page = getCurrentPages().pop();
 											console.log(page);
-										
 										    if (page == undefined || page == null) return;
 												//page.onLoad();
 												window.location.reload();
@@ -199,6 +193,12 @@
 	.wrap {
 		padding: 30rpx;
 		background-color: #fff;
+	},
+	
+	.button-Item-Picker{
+		margin: 5px;
+		
+		
 	}
 
 </style>

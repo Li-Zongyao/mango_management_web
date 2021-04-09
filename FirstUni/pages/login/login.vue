@@ -29,10 +29,11 @@
 				uni.setStorageSync("nickname", this.nickname);
 			},
 			login() {
+				console.log('start POST');
 				uni.request({
 					url: "/apis/login",					/* Post传参地址及date */
-					method: "POST",
-				
+					method: "POST",	
+					
 					data: {
 						account: this.nickname,
 						password: this.password

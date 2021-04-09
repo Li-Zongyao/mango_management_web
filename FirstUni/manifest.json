@@ -69,10 +69,12 @@
         "enable" : false
     },
     "h5" : {
+		//h5跨域
         "devServer" : {
             "https" : false,
             "proxy" : {
                 "/apis" : {
+					
                     "target" : "http://localhost:62210",
                     "changeOrigin" : true,
                     "secure" : false,
