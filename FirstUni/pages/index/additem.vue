@@ -70,7 +70,7 @@
 			submit() {
 						console.log(_this.username),
 						uni.request({
-							url:'/apis/item/addNewItem',
+							url:'/apis/item/addNewItemIntoStorage?userAccount='+ _this.username + '&number='+ 0 ,
 							method: "POST",		
 							data: {	
 								itemName:_this.model.name,
@@ -87,7 +87,16 @@
 										url: '/pages/index/index'
 									});
 									uni.switchTab({
-										url: '/pages/index/index'
+										url: '/pages/index/index',
+										
+										success() {
+											let page = getCurrentPages().pop();
+											console.log(page);
+										
+										    if (page == undefined || page == null) return;
+												//page.onLoad();
+												window.location.reload();
+										 }	
 									});	
 								}else {
 									uni.showToast({

@@ -81,7 +81,15 @@
 			onLoad() {
 				this.name = uni.getStorageSync('nickname');
 				this.getShopDate();
-				this.shopDateSubstitute()
+				this.shopDateSubstitute();
+				
+			},	
+			onShow(){
+	
+			},
+			onReady(){	
+				this.getShopDate();
+				
 			},
 			relogin() {
 				uni.navigateTo({

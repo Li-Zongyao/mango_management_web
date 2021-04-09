@@ -2,8 +2,8 @@
 	<view class="wrap">
 		<u-form :model="model" ref="uForm" >
 			
-		<u-form-item label-width="150" :label-position="left" label="采购日期" prop="shopdate">
-			<u-input v-model="model.shopdate" :type="select" :border="true" @click="show = true" />
+		<u-form-item label-width="150" :label-position="'left'" label="采购日期" prop="shopdate">
+			<u-input v-model="model.shopdate" :type="'select'" :border="true" @click="show = true" />
 			<u-action-sheet :list="actionSheetList" v-model="show" @click="actionSheetCallback"></u-action-sheet>
 		</u-form-item>	
 			
@@ -25,6 +25,9 @@
 				model: {
 					shopdate: '',
 				},
+				
+
+				
 				errorType: ['message'],
 				show: false,
 				dateNumberOfList: 100,
@@ -58,7 +61,8 @@
 		},
 		onLoad() {
 			_this = this;
-			_this.username = uni.getStorageSync('nickname')
+			_this.username = uni.getStorageSync('nickname');
+			
 		},
 		onReady() {
 		},
@@ -91,7 +95,21 @@
 										type: 'success',
 										url: 'pages/usercenter/usercenter'
 									});
+									
+									
+									uni.switchTab({
+										url: '/pages/usercenter/usercenter',
+									    
+										success() {
+		                                    let page = getCurrentPages().pop();
+											console.log(page);
+		
+		                                    if (page == undefined || page == null) return;
+											//page.onLoad();
+											window.location.reload();
+		                                }	
 										
+									});	
 								}else {
 									uni.showToast({
 									title: '错误',

@@ -73,7 +73,11 @@
 		},
 		onLoad() {			
 				this.name = uni.getStorageSync('nickname')					
-		},		
+		},	
+		
+		onReady() {
+		this.getList();
+		},
 		//下拉刷新
 		onPullDownRefresh() {			
 
