@@ -66,6 +66,31 @@
 				"navigationBarTitleText": "userhabit"
 			}
 		},
+		
+		//扫码
+		{
+			"path": "pages/index/scan",
+			"style": {
+				"navigationBarTitleText": "scan"
+			}
+		},
+		
+		//购买商品
+		{
+			"path": "pages/index/buyItem",
+			"style": {
+				"navigationBarTitleText": "buyItem"
+			}
+		},
+		//每日消耗
+		{
+			"path": "pages/dailyConsume/dailyConsume",
+			"style": {
+				"navigationBarTitleText": "dailyConsume"
+			}
+		},
+		
+		
 
 
 		//uni-app https://ext.dcloud.net.cn/plugin?id=98
@@ -110,10 +135,10 @@
 				"text": "首页"
 			},
 			{
-				"pagePath": "pages/tabbar/tabbar-2/tabbar-2",
+				"pagePath": "pages/dailyConsume/dailyConsume",
 				"iconPath": "static/img/tabbar/guanzhu.png",
 				"selectedIconPath": "static/img/tabbar/guanzhuactive.png",
-				"text": "关注"
+				"text": "消耗"
 			},
 			{
 				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",

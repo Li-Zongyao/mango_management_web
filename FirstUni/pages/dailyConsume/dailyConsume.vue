@@ -3,7 +3,9 @@
 		<!--<cover-image src = "../../static/bg.png"></cover-image>-->
  		<view class="bghead"></view> <!-- 显示背景蓝色 -->
 		<view class="main">
+			
 			<!--左侧 右侧 保留功能-->
+			<!--
 			<view id="head1" class="flex justify-around margin-top-sm ">
 				<navigator url="additem" class="flex align-center">					
 					<view class="cuIcon-peoplelist text-white" style="font-size: 50upx"></view>
@@ -15,9 +17,11 @@
 					</view>
 				</navigator>
 			</view>
+			-->
 			<!--社区出行概况-->
 
 			<!--两个功能按钮-->
+			<!--
 			<view id="btn" class="flex justify-around margin-top-sm">
 				<navigator class="btn-box bg-gradual-blue flex align-center justify-center"  url="addStorage">
 					<text class="text-xxl text-shadow Text-AddStorage"> Add Storage</text>
@@ -28,8 +32,14 @@
 					<text class="cuIcon-deliver padding-left-xs" style="font-size: 90upx;opacity: 0.2"></text>
 				</navigator>
 			</view>
+			-->
 			<!--选项卡 https://ext.dcloud.net.cn/plugin?id=54-->
-
+			
+			
+			<view id= "head3" class="flex justify-around margin-top-sm ">
+				<text>显示商品消耗速度</text>
+			</view>
+			
 			<!-- class="scroll" -->
 			<scroll-view id="scroll" scroll-y = "true" >
 				<view class="cu-list menu card-menu margin-top-sm" >
@@ -43,14 +53,15 @@
 							</template>
 							<template v-else>
 								<view class="text-gray ">
-									number： {{item.remaining}}
+									number： {{item.purchaseFrequency}}
 								</view>
 							</template>
 
 						</view>
 					</navigator>
 				</view>
-			</scroll-view>			
+			</scroll-view>	
+					
 		</view>		
 	</view>
 </template>
@@ -129,6 +140,21 @@
 		height: 300rpx;
 		width: 100%;
 	}
+	#head3{
+		margin-left: 15px;
+		margin-right: 15px;
+		padding: 15rpx;
+		height: 100rpx;
+		line-height:30px;
+		display: flex;
+		background-color: #ecf5ff;
+		border-radius: 10rpx;
+		border: #381b1b;
+		border-width: 1px;
+		border-style:solid;
+	}
+	
+	
 	.Text-AddStorage{
 		
 		padding-left:20px
@@ -158,7 +184,7 @@
 		border-radius: 20upx;
 	}
 	.scroll{
-		height: 700rpx;
+		height: 1200upx;
 	}
 	
 	.swiper {

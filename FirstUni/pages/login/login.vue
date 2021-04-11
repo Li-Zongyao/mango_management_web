@@ -47,7 +47,17 @@
 							});
 							uni.setStorageSync("nickname", this.nickname)		/* 保存名字并跳转 */
 							uni.switchTab({
-								url: '/pages/index/index'
+								url: '/pages/index/index',
+								
+								success() {
+									let page = getCurrentPages().pop();
+									console.log(page);
+								    if (page == undefined || page == null) return;
+										//page.onLoad();
+										window.location.reload();
+								 }
+								
+								
 							});
 							// uni.redirectTo({
 							// 	url: "../indeAx/index"
