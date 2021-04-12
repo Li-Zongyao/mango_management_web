@@ -16,7 +16,7 @@
 			
 			<view class="center-list-item">
 				<text class="list-icon">&#xe639;</text>
-				<text class="list-text">新消息通知</text>
+				<text class="list-text">New essage</text>
 				<text class="navigat-arrow">&#xe65e;</text>
 			</view>			
 		</view>
@@ -26,7 +26,7 @@
 			
 			<navigator url="userhabit" class="center-list-item border-bottom">  	
 				<text class="list-icon">&#xe60b;</text>
-				<text class="list-text">用户购物习惯</text>
+				<text class="list-text">Shop habbit</text>
 				<text class="habit">  Buy on {{WeekDay}}</text>				
 				<text class="navigat-arrow">&#xe65e;</text>
 			</navigator>
@@ -37,7 +37,7 @@
 			
 			<navigator url="uinfo" class="center-list-item border-bottom">  	<!-- app信息 -->
 				<text class="list-icon">&#xe60b;</text>
-				<text class="list-text">帮助与反馈</text>
+				<text class="list-text">Help and message</text>
 				<text class="navigat-arrow">&#xe65e;</text>
 			</navigator>
 			

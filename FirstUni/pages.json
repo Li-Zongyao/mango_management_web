@@ -24,7 +24,7 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": "home"
 			}
 		},	
 			
@@ -89,6 +89,14 @@
 				"navigationBarTitleText": "dailyConsume"
 			}
 		},
+		//更改每日消耗
+		{
+			"path": "pages/dailyConsume/updateConsumption",
+			"style": {
+				"navigationBarTitleText": "updateConsumption"
+			}
+		},
+
 		
 		
 
@@ -132,19 +140,19 @@
 				"pagePath": "pages/index/index",
 				"iconPath": "static/img/tabbar/home.png",
 				"selectedIconPath": "static/img/tabbar/homeactive.png",
-				"text": "首页"
+				"text": "Home"
 			},
 			{
 				"pagePath": "pages/dailyConsume/dailyConsume",
 				"iconPath": "static/img/tabbar/guanzhu.png",
 				"selectedIconPath": "static/img/tabbar/guanzhuactive.png",
-				"text": "消耗"
+				"text": "Consume"
 			},
 			{
 				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
 				"iconPath": "static/img/tabbar/news.png",
 				"selectedIconPath": "static/img/tabbar/newsactive.png",
-				"text": "消息"
+				"text": "Massage"
 			},
 			{
 				"pagePath": "pages/usercenter/usercenter",

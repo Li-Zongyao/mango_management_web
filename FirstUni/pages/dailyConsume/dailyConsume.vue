@@ -23,8 +23,8 @@
 			<!--两个功能按钮-->
 			<!--
 			<view id="btn" class="flex justify-around margin-top-sm">
-				<navigator class="btn-box bg-gradual-blue flex align-center justify-center"  url="addStorage">
-					<text class="text-xxl text-shadow Text-AddStorage"> Add Storage</text>
+				<navigator class="btn-box bg-gradual-blue flex align-center justify-center"  url="updateConsumption">
+					<text class="text-xxl text-shadow Text-AddStorage"> update Consumption</text>
 					<text class="cuIcon-cart " style="padding-left: 0upx;font-size: 90upx;opacity: 0.2"></text>
 				</navigator>
 				<navigator class="btn-box bg-gradual-green flex align-center justify-center" url="buyItem">
@@ -33,11 +33,14 @@
 				</navigator>
 			</view>
 			-->
+			
+			<u-button class="headbutton" type="primary" :ripple = "true"  @tap="Update">update Consumption</u-button>
+
 			<!--选项卡 https://ext.dcloud.net.cn/plugin?id=54-->
 			
 			
 			<view id= "head3" class="flex justify-around margin-top-sm ">
-				<text>显示商品消耗速度</text>
+				<text>ItemDailyConsume</text>
 			</view>
 			
 			<!-- class="scroll" -->
@@ -94,6 +97,13 @@
 
 		},		
 		methods: {
+			
+			Update(){
+				uni.navigateTo({
+				    url: 'updateConsumption'
+				});
+				
+			},
 			/**
 			 * 加载今日数据
 			 */
@@ -152,6 +162,15 @@
 		border: #381b1b;
 		border-width: 1px;
 		border-style:solid;
+	}
+	
+	.headbutton{
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: 30rpx;
+	margin-bottom: 30rpx;
+	padding: 15rpx;	
+	background: linear-gradient(90deg,#1352ff 0%,#72bbb5 49%,#72bbb5 51%,#1352ff 100%)
 	}
 	
 	
