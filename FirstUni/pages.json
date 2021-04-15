@@ -96,6 +96,14 @@
 				"navigationBarTitleText": "updateConsumption"
 			}
 		},
+		
+		//购买提示
+		{
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "message"
+			}
+		},
 
 		
 		
@@ -149,7 +157,7 @@
 				"text": "Consume"
 			},
 			{
-				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
+				"pagePath": "pages/message/message",
 				"iconPath": "static/img/tabbar/news.png",
 				"selectedIconPath": "static/img/tabbar/newsactive.png",
 				"text": "Massage"

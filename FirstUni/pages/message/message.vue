@@ -1,46 +1,11 @@
 <template>
-	<view class="main">
-		<!--<cover-image src = "../../static/bg.png"></cover-image>-->
- 		<view class="bghead"></view> <!-- 显示背景蓝色 -->
-		<view class="main">
-			
-			<!--左侧 右侧 保留功能-->
-			<!--
-			<view id="head1" class="flex justify-around margin-top-sm ">
-				<navigator url="additem" class="flex align-center">					
-					<view class="cuIcon-peoplelist text-white" style="font-size: 50upx"></view>
-				</navigator>
-				<view></view><view></view><view></view><view></view>
-				<navigator url="scan" class="flex align-center">
-					<view>
-						<view class="cuIcon-group text-white text-bold" style="font-size: 50upx"></view>
-					</view>
-				</navigator>
-			</view>
-			-->
-			<!--社区出行概况-->
-
-			<!--两个功能按钮-->
-			<!--
-			<view id="btn" class="flex justify-around margin-top-sm">
-				<navigator class="btn-box bg-gradual-blue flex align-center justify-center"  url="updateConsumption">
-					<text class="text-xxl text-shadow Text-AddStorage"> update Consumption</text>
-					<text class="cuIcon-cart " style="padding-left: 0upx;font-size: 90upx;opacity: 0.2"></text>
-				</navigator>
-				<navigator class="btn-box bg-gradual-green flex align-center justify-center" url="buyItem">
-					<text class="text-xxl text-shadow Text-AddStorage">Buy Storage</text>
-					<text class="cuIcon-deliver padding-left-xs" style="font-size: 90upx;opacity: 0.2"></text>
-				</navigator>
-			</view>
-			-->
-			
-			<u-button class="headbutton" type="primary" :ripple = "true"  @tap="Update">update Consumption</u-button>
-
-			<!--选项卡 https://ext.dcloud.net.cn/plugin?id=54-->
-			
+	<view class="main">		
+		
+		<!--<view class="bghead"></view>--> <!-- 显示背景蓝色 -->
+		<view class="main bg-orange" >
 			
 			<view id= "head3" class="flex justify-around margin-top-sm ">
-				<text>ItemDailyConsume</text>
+				<text>Item need to buy</text>
 			</view>
 			
 			<!-- class="scroll" -->
@@ -48,23 +13,23 @@
 				<view class="cu-list menu card-menu margin-top-sm" >
 					<navigator :url="'../detail/detail?id=' + item.id" class="cu-item" v-for="(item,key) in logList" :key = "key">
 						<view class="content padding-tb-sm">							
-							<view>Name：{{item.itemName}}</view>
+							<view class="coloritemName">Name：{{item.itemName}}</view>
 							<template v-if="item.state==1">
-							<view class="text-gray ">
-								ItemIF： {{item.itemId}}
-							</view>
+
 							</template>
 							<template v-else>
+								<view class="text-gray">
+									purchaseFrequency： {{item.purchaseFrequency}}
+								</view>
 								<view class="text-gray ">
-									number： {{item.purchaseFrequency}}
+									remaining： {{item.remaining}}
 								</view>
 							</template>
 
 						</view>
 					</navigator>
 				</view>
-			</scroll-view>	
-					
+			</scroll-view>			
 		</view>		
 	</view>
 </template>
@@ -97,13 +62,6 @@
 
 		},		
 		methods: {
-			
-			Update(){
-				uni.navigateTo({
-				    url: 'updateConsumption'
-				});
-				
-			},
 			/**
 			 * 加载今日数据
 			 */
@@ -123,12 +81,11 @@
 			getList(type){
 				console.log(type)
 				uni.request({
-					url: '/apis/item/userStorage',
+					url: '/apisorder/purchaseReminding?userAccount='+ this.name,
 					method: "GET",
 					
 					data: {						
-						state:type,
-						userAccount:this.name
+
 					},
 					
 					success: data => {
@@ -150,6 +107,11 @@
 		height: 300rpx;
 		width: 100%;
 	}
+	
+	.coloritemName{
+		color: #DD514C;
+	}
+	
 	#head3{
 		margin-left: 15px;
 		margin-right: 15px;
@@ -157,22 +119,13 @@
 		height: 100rpx;
 		line-height:30px;
 		display: flex;
-		background-color: #ecf5ff;
+		background-color: #ff8e0c;
 		border-radius: 10rpx;
-		border: #381b1b;
+		border: #e7d90f;
 		border-width: 1px;
 		border-style:solid;
+		font-size: 20px;
 	}
-	
-	.headbutton{
-	margin-left: 15px;
-	margin-right: 15px;
-	margin-top: 30rpx;
-	margin-bottom: 30rpx;
-	padding: 15rpx;	
-	background: linear-gradient(90deg,#1352ff 0%,#72bbb5 49%,#72bbb5 51%,#1352ff 100%)
-	}
-	
 	
 	.Text-AddStorage{
 		
@@ -203,7 +156,7 @@
 		border-radius: 20upx;
 	}
 	.scroll{
-		height: 1200upx;
+		height: 700rpx;
 	}
 	
 	.swiper {
