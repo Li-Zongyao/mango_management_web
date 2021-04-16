@@ -7,7 +7,7 @@
 			<view><input type="text" placeholder="username" v-model="nickname" /></view>
 			<view><input type="password" placeholder="password" v-model="password" /></view>
 			<view><button type="primary" @tap="login">login</button></view>
-			<view><button type="primary" @tap="test">only for test</button></view>    <!-- 测试用按钮，只能将用户名赋值给nickname并且跳转到index.vue -->
+<!-- 			<view><button type="primary" @tap="test">only for test</button></view> -->    <!-- 测试用按钮，只能将用户名赋值给nickname并且跳转到index.vue -->
 			<navigator url="../register/register" hover-class="none" class="zai-label">Don’t have an account yet? Click here to register.</navigator>
 		</view>
 	</view>

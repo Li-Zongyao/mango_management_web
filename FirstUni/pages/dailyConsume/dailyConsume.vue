@@ -246,7 +246,7 @@
 		line-height: 84upx;
 		border-radius: 44upx;
 		font-size: 32upx;
-		background: linear-gradient(left, #86B5F4, #4790EF);
+		background: linear-gradient(to left, #86B5F4, #4790EF);
 	}
 
 	.login-btn {

@@ -2,13 +2,13 @@
 	<view class="wrap">
 		<u-form :model="model" ref="uForm" :errorType="errorType">
 			<u-form-item  label-width="150"
-			 :label-position="labelPosition" label="物品名称" prop="name">
+			 :label-position="labelPosition" label="Item name" prop="name">
 				<u-input :border="border" placeholder="Please input NAME of the item" v-model="model.name" type="text"></u-input>
 			</u-form-item>
 
-			<u-form-item :label-position="labelPosition" label="sellerID" prop="sellerID" label-width="150">
+<!-- 			<u-form-item :label-position="labelPosition" label="sellerID" prop="sellerID" label-width="150">
 				<u-input :border="border" placeholder="Please input SellerID" v-model="model.sellerID" type="text"></u-input>
-			</u-form-item>
+			</u-form-item> -->
 			
 			<u-form-item  label-width="150" :label-position="labelPosition" label="amount" prop="amount">
 				<u-input :border="border" placeholder="Please input amount" v-model="model.amount" type="text"></u-input>
@@ -43,7 +43,7 @@
 					name: '',
 					amount:'',
 					unit:'',
-					sellerID:'',
+					sellerID:'0',
 					price:'',
 				},
 
