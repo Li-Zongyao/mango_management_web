@@ -9,7 +9,7 @@
 					<view class="cuIcon-peoplelist text-white" style="font-size: 50upx"></view>
 				</navigator>
 				<view></view><view></view><view></view><view></view>
-				<navigator url="scan" class="flex align-center">
+				<navigator url="scaninfo" class="flex align-center">
 					<view>
 						<view class="cuIcon-group text-white text-bold" style="font-size: 50upx"></view>
 					</view>
@@ -201,7 +201,7 @@
 		line-height: 84upx;
 		border-radius: 44upx;
 		font-size: 32upx;
-		background: linear-gradient(to left, #86B5F4, #4790EF);
+		background: linear-gradient(left, #86B5F4, #4790EF);
 	}
 
 	.login-btn {

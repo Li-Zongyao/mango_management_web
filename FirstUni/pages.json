@@ -66,7 +66,13 @@
 				"navigationBarTitleText": "userhabit"
 			}
 		},
-		
+		//扫码信息
+		{
+			"path": "pages/index/scaninfo",
+			"style": {
+				"navigationBarTitleText": "scaninfo"
+			}
+		},
 		//扫码
 		{
 			"path": "pages/index/scan",
@@ -94,14 +100,6 @@
 			"path": "pages/dailyConsume/updateConsumption",
 			"style": {
 				"navigationBarTitleText": "updateConsumption"
-			}
-		},
-		
-		//购买提示
-		{
-			"path": "pages/message/message",
-			"style": {
-				"navigationBarTitleText": "message"
 			}
 		},
 
@@ -157,7 +155,7 @@
 				"text": "Consume"
 			},
 			{
-				"pagePath": "pages/message/message",
+				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
 				"iconPath": "static/img/tabbar/news.png",
 				"selectedIconPath": "static/img/tabbar/newsactive.png",
 				"text": "Massage"

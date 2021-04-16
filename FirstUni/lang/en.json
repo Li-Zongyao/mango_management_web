@@ -1,0 +1,11 @@
+{
+	"scan": {
+		"text":"Goods name is:",
+		"title": "scanning code",
+		"tips": "Please align the barcode in parallel",
+		"light": "light touch",
+		"album": "album",
+		"cancel": "user deselect",
+		"error": "unrecognized"
+	}
+}
