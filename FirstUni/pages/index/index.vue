@@ -6,12 +6,12 @@
 			<!--左侧 右侧 保留功能-->
 			<view id="head1" class="flex justify-around margin-top-sm ">
 				<navigator url="additem" class="flex align-center">					
-					<view class="cuIcon-peoplelist text-white" style="font-size: 50upx"></view>
+					<view class="cuIcon-add text-white" style="font-size: 50upx"></view>
 				</navigator>
 				<view></view><view></view><view></view><view></view>
 				<navigator url="scaninfo" class="flex align-center">
 					<view>
-						<view class="cuIcon-group text-white text-bold" style="font-size: 50upx"></view>
+						<view class="cuIcon-scan text-white text-bold" style="font-size: 50upx"></view>
 					</view>
 				</navigator>
 			</view>
@@ -20,11 +20,11 @@
 			<!--两个功能按钮-->
 			<view id="btn" class="flex justify-around margin-top-sm">
 				<navigator class="btn-box bg-gradual-blue flex align-center justify-center"  url="addStorage">
-					<text class="text-xxl text-shadow Text-AddStorage"> Add Storage</text>
+					<text class="text-xxl text-shadow Text-AddStorage"> Update Storage</text>
 					<text class="cuIcon-cart " style="padding-left: 0upx;font-size: 90upx;opacity: 0.2"></text>
 				</navigator>
 				<navigator class="btn-box bg-gradual-green flex align-center justify-center" url="buyItem">
-					<text class="text-xxl text-shadow Text-AddStorage">Buy Storage</text>
+					<text class="text-xxl text-shadow Text-AddStorage"> Buy Item</text>
 					<text class="cuIcon-deliver padding-left-xs" style="font-size: 90upx;opacity: 0.2"></text>
 				</navigator>
 			</view>

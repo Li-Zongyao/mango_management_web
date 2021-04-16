@@ -89,7 +89,7 @@
 				selectList: [],
 				unitList: [],
 				unitListShow: false,
-				numberofitem:2,
+				numberofitem:1,
 				username:'',
 			}
 

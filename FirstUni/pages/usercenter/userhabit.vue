@@ -2,7 +2,7 @@
 	<view class="wrap">
 		<u-form :model="model" ref="uForm" >
 			
-		<u-form-item label-width="150" :label-position="'left'" label="采购日期" prop="shopdate">
+		<u-form-item label-width="150" :label-position="'left'" label="Shopping date" prop="shopdate">
 			<u-input v-model="model.shopdate" :type="'select'" :border="true" @click="show = true" />
 			<u-action-sheet :list="actionSheetList" v-model="show" @click="actionSheetCallback"></u-action-sheet>
 		</u-form-item>	
@@ -10,7 +10,7 @@
 		</u-form>
 
 		<view class="mt20">
-			<u-button type="success" :ripple="true" :plain="true" shape="circle" @click="submit">提交</u-button>
+			<u-button type="success" :ripple="true" :plain="true" shape="circle" @click="submit">submitt</u-button>
 		</view>
 		
 		<u-toast ref="uToast" />

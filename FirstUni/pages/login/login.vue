@@ -30,14 +30,18 @@
 			},
 			login() {
 				console.log('start POST');
+			
+
 				uni.request({
 					url: "/apis/login",					/* Post传参地址及date */
 					method: "POST",	
+
 					
 					data: {
 						account: this.nickname,
 						password: this.password
 					},
+					
 					success: (res) => {
 						console.log('request success---->', res.data);
 						if (res.data === 'log in successfully.') {
@@ -72,6 +76,9 @@
 					},
 
 				})
+
+				
+
 			},		
 		}
 	}

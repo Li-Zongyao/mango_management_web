@@ -92,14 +92,14 @@
 		{
 			"path": "pages/dailyConsume/dailyConsume",
 			"style": {
-				"navigationBarTitleText": "dailyConsume"
+				"navigationBarTitleText": "daily Consume"
 			}
 		},
 		//更改每日消耗
 		{
 			"path": "pages/dailyConsume/updateConsumption",
 			"style": {
-				"navigationBarTitleText": "updateConsumption"
+				"navigationBarTitleText": "update Consumption"
 			}
 		},
 		
@@ -163,7 +163,7 @@
 				"text": "Consume"
 			},
 			{
-				"pagePath": "pages/tabbar/message/message",
+				"pagePath": "pages/message/message",
 				"iconPath": "static/img/tabbar/news.png",
 				"selectedIconPath": "static/img/tabbar/newsactive.png",
 				"text": "Massage"

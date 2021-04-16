@@ -16,7 +16,7 @@
 			
 			<view class="center-list-item">
 				<text class="list-icon">&#xe639;</text>
-				<text class="list-text">New essage</text>
+				<text class="list-text">New message</text>
 				<text class="navigat-arrow">&#xe65e;</text>
 			</view>			
 		</view>
@@ -26,7 +26,7 @@
 			
 			<navigator url="userhabit" class="center-list-item border-bottom">  	
 				<text class="list-icon">&#xe60b;</text>
-				<text class="list-text">Shop habbit</text>
+				<text class="list-text">Shop habit</text>
 				<text class="habit">  Buy on {{WeekDay}}</text>				
 				<text class="navigat-arrow">&#xe65e;</text>
 			</navigator>
