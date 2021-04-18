@@ -6,6 +6,9 @@
 		<u-form-item  label-width="150" :label-position="labelPosition" label="amount" prop="amount">
 			<u-input :border="border" placeholder="Please input amount(default:1)" v-model="model.amount" type="text"></u-input>
 		</u-form-item>
+		<u-form-item :label-position="labelPosition" label="price" prop="price" label-width="150">
+			<u-input :border="border" placeholder="Please input price" v-model="model.price" type="text"></u-input>
+		</u-form-item>
 	</view>
 
 </template>
@@ -49,24 +52,30 @@
 							return;
 							}
 						uni.request({
-							url:'/apis/item/addNewItemIntoStorage?userAccount='+ _this.username + '&number='+ 0 ,
+							// #ifdef APP-PLUS
+							url: this.appurl+'/item/addNewItemIntoStorage?userAccount='+ _this.username + '&number='+ 1 ,
+							// #endif	
+							// #ifndef APP-PLUS
+							url:'/apis/item/addNewItemIntoStorage?userAccount='+ _this.username + '&number='+ 1 ,
+							// #endif
 							method: "POST",		
 							data: {	
 								itemName:_this.codeData,
 								sellerID:'',
 								amount:_this.model.amount,
 								unit:'',
-								price:''
+								price:_this.model.price,
 							},
 							success: (res) => {	
 								if (res.data = 'Update item and storage successfully.') {
-									_this.$refs.uToast.show({
+									// _this.$refs.uToast.show({
+									uni.showToast({
 										title: '添加成功',
 										type: 'success',
-										url: '/pages/index'
+										url: '/pages/index/index'
 									});
 									uni.switchTab({
-										url: '/pages/index',
+										url: '/pages/index/index',
 										
 										success() {
 											let page = getCurrentPages().pop();
@@ -97,6 +106,7 @@
 			console.log(data);
 			_this.codeData = data.result;
 			_this.status=data.status;
+			_this.model.price=data.price;
 		});
 		},
 	}

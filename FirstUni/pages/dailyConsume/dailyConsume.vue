@@ -123,7 +123,12 @@
 			getList(type){
 				console.log(type)
 				uni.request({
+					// #ifdef APP-PLUS
+					url: this.appurl+'/item/userStorage',
+					// #endif
+					//#ifndef APP-PLUS
 					url: '/apis/item/userStorage',
+					// #endif
 					method: "GET",
 					
 					data: {						
@@ -150,6 +155,12 @@
 		height: 300rpx;
 		width: 100%;
 	}
+	
+	
+	#scroll{
+	  padding-bottom: var(--window-bottom);
+	}
+	
 	#head3{
 		margin-left: 15px;
 		margin-right: 15px;

@@ -61,7 +61,7 @@
 				selectList: [],
 				unitList: [],
 				unitListShow: false,
-				numberofitem:2,
+				numberofitem:1,
 				username:'',
 			}
 
@@ -92,7 +92,12 @@
 			getList(type){
 				console.log(this.username)
 				uni.request({
+					// #ifdef APP-PLUS
+					url: this.appurl+"/item/userStorage",
+					// #endif
+					//#ifndef APP-PLUS
 					url: '/apis/item/userStorage',
+					// #endif
 					method: "GET",
 					
 					data: {						

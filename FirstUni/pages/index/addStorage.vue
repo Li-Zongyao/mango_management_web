@@ -89,7 +89,7 @@
 				selectList: [],
 				unitList: [],
 				unitListShow: false,
-				numberofitem:2,
+				numberofitem:1,
 				username:'',
 			}
 
@@ -120,7 +120,12 @@
 			getList(type){
 				console.log(this.username)
 				uni.request({
+					// #ifdef APP-PLUS
+					url: this.appurl+'/login',
+					// #endif	
+					// #ifndef APP-PLUS
 					url: '/apis/item/userStorage',
+					// #endif
 					method: "GET",
 					
 					data: {						
@@ -146,7 +151,12 @@
 						this.model.addPickerNewItemName = this.readFromActionSheetList[this.index],
 						console.log(this.model.addPickerNewItemName),
 						uni.request({
+							// #ifdef APP-PLUS
+							url: this.appurl+'/apis/storage/EditStorageRemaining/?userAccount=' +  _this.username + '&remaining=' + _this.numberofitem + '&itemName=' + _this.model.addPickerNewItemName,
+							// #endif
+							// #ifndef APP-PLUS
 							url:'/apis/storage/EditStorageRemaining/?userAccount=' +  _this.username + '&remaining=' + _this.numberofitem + '&itemName=' + _this.model.addPickerNewItemName,
+							// #endif
 							//url:'/apis/item/addNewItemIntoStorage?userAccount='+ _this.username +'&number='+ _this.numberofitem,
 							method: "POST",		
 							data: {	
@@ -159,7 +169,7 @@
 							success: (res) => {	
 								if (res.data === 'update successfully.') {
 									_this.$refs.uToast.show({
-										title: '添加成功',
+										title: 'Update Item Success',
 										type: 'success',
 										url: '/pages/index/index'
 									});

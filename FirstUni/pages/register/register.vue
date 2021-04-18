@@ -64,7 +64,12 @@
 					return;
 				}
 				uni.request({
+					// #ifdef APP-PLUS
+					url: this.appurl+"/signup",
+					// #endif	
+					// #ifndef APP-PLUS
 					url: "/apis/signup",		/* 注册并传参 */
+					// #endif
 					method: "POST",
 					data: {
 						userAccount: this.username,

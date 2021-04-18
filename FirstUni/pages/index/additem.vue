@@ -70,7 +70,12 @@
 			submit() {
 						console.log(_this.username),
 						uni.request({
+							// #ifdef APP-PLUS
+							url: this.appurl+'/item/addNewItemIntoStorage?userAccount='+ _this.username + '&number='+ 0 ,
+							// #endif
+							// #ifndef APP-PLUS
 							url:'/apis/item/addNewItemIntoStorage?userAccount='+ _this.username + '&number='+ 0 ,
+							// #endif
 							method: "POST",		
 							data: {	
 								itemName:_this.model.name,

@@ -101,7 +101,7 @@
 		},
 		
 		onReady() {
-		this.getList();
+		// this.getList();
 		},
 		
 		methods: {
@@ -120,7 +120,12 @@
 			getList(type){
 				console.log(this.username)
 				uni.request({
+					// #ifdef APP-PLUS
+					url: this.appurl+'/item/userStorage',
+					// #endif
+					// #ifndef APP-PLUS
 					url: '/apis/item/userStorage',
+					// #endif
 					method: "GET",
 					
 					data: {						
@@ -161,7 +166,7 @@
 							success: (res) => {	
 								if (res.data === 'shop successfully.') {
 									_this.$refs.uToast.show({
-										title: '添加成功',
+										title: 'Buy Item Success',
 										type: 'success',
 										url: '/pages/index/index'
 									});
@@ -202,5 +207,30 @@
 		
 		
 	}
+	
+	//	解决app不显示picker内容
+	.uni-picker-view {
+	   display: block;
+	}
+	.uni-picker-view .uni-picker-view-wrapper {
+	   display: flex;
+	   position: relative;
+	   overflow: hidden;
+	   height: 100%;
+	   background-color: white;
+	 }
+	.uni-picker-view[hidden] {
+	  display: none;
+	 }
+	
+	.picker-view {
+	   width: 100%;
+		height: 300upx;
+	   margin-top:20upx;
+	}
+	.item {
+		line-height: 100upx;
+		text-align: center;
+	 }
 
 </style>

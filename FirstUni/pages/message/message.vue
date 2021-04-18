@@ -81,7 +81,12 @@
 			getList(type){
 				console.log(type)
 				uni.request({
-					url: '/apisorder/purchaseReminding?userAccount='+ this.name,
+					// #ifdef APP-PLUS
+					url: this.appurl+'/order/purchaseReminding?userAccount='+ this.name,
+					// #endif
+					// #ifndef APP-PLUS
+					url: '/apis/order/purchaseReminding?userAccount='+ this.name,
+					// #endif
 					method: "GET",
 					
 					data: {						
@@ -110,6 +115,10 @@
 	
 	.coloritemName{
 		color: #DD514C;
+	}
+	
+	#scroll{
+	  padding-bottom: var(--window-bottom);
 	}
 	
 	#head3{

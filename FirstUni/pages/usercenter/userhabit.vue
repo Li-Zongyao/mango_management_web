@@ -83,7 +83,12 @@
 
 						console.log(_this.username),
 						uni.request({
+							// #ifdef APP-PLUS
+							url: this.appurl+'/user/editPurchaseDate?userAccount='+ _this.username + '&date=' + this.dateNumberOfList,
+							// #endif	
+							// #ifndef APP-PLUS
 							url:'/apis/user/editPurchaseDate?userAccount='+ _this.username + '&date=' + this.dateNumberOfList,
+							// #endif
 							method: "POST",		
 							data: {	
 								postshopdate: _this.model.shopdate,

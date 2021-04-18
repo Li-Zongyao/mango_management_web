@@ -102,7 +102,12 @@
 			getShopDate(){
 				console.log('getshopdate')
 				uni.request({
+					// #ifdef APP-PLUS
+					url: this.appurl+"/user/getInfo",
+					// #endif	
+					// #ifndef APP-PLUS
 					url: '/apis/user/getInfo',
+					// #endif
 					method: "GET",
 					
 					data: {						

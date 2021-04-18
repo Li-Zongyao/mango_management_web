@@ -33,7 +33,12 @@
 			
 
 				uni.request({
+					// #ifdef APP-PLUS
+					url: this.appurl+"/login",
+					// #endif	
+					// #ifndef APP-PLUS
 					url: "/apis/login",					/* Post传参地址及date */
+					// #endif
 					method: "POST",	
 
 					
@@ -46,7 +51,7 @@
 						console.log('request success---->', res.data);
 						if (res.data === 'log in successfully.') {
 							uni.showToast({
-								title: '登录成功',
+								title: 'Login Success',
 								duration: 2000
 							});
 							uni.setStorageSync("nickname", this.nickname)		/* 保存名字并跳转 */

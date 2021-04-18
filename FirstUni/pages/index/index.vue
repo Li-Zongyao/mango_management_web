@@ -31,10 +31,10 @@
 			<!--选项卡 https://ext.dcloud.net.cn/plugin?id=54-->
 
 			<!-- class="scroll" -->
-			<scroll-view id="scroll" scroll-y = "true" >
+			<scroll-view class="content" id="scroll" scroll-y = "true" >
 				<view class="cu-list menu card-menu margin-top-sm" >
 					<navigator :url="'../detail/detail?id=' + item.id" class="cu-item" v-for="(item,key) in logList" :key = "key">
-						<view class="content padding-tb-sm">							
+						<view class="content-item padding-tb-sm">							
 							<view>Name：{{item.itemName}}</view>
 							<template v-if="item.state==1">
 							<view class="text-gray ">
@@ -102,7 +102,12 @@
 			getList(type){
 				console.log(type)
 				uni.request({
+					// #ifdef APP-PLUS
+					url: this.appurl+'/item/userStorage',
+					// #endif	
+					// #ifndef APP-PLUS
 					url: '/apis/item/userStorage',
+					// #endif
 					method: "GET",
 					
 					data: {						
@@ -132,6 +137,10 @@
 	.Text-AddStorage{
 		
 		padding-left:20px
+	}
+	
+	.content{
+	  padding-bottom: var(--window-bottom);
 	}
 	
 	.bghead{

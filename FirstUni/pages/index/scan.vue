@@ -65,14 +65,17 @@
 									//result=res.data.goodsName;
 									if(res.data.code='1'){
 										var codedata= res.data.data.goodsName;
+										var price=res.data.data.price;
 									}
 									else{
 										var codedata=res.data.msg;
+										var price='0';
 									}
 									console.log(codedata);
 									this.$eventHub.$emit("scanResult", {
 										result: codedata ,//发送数据
-										status: res.data.code
+										status: res.data.code,
+										price:price
 									});
 								}
 							});

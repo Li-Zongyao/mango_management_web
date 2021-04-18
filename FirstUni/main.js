@@ -26,6 +26,7 @@ const i18n = new VueI18n({
 
 Vue.prototype._i18n = i18n
 Vue.prototype.$eventHub = new Vue();
+Vue.prototype.appurl='http://192.168.1.100:62210'  //自家局域网ip ipconfig
 App.mpType = 'app'
 
 const app = new Vue({
