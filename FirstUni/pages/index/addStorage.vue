@@ -101,7 +101,7 @@
 		},
 		
 		onReady() {
-		this.getList();
+		// this.getList();
 		},
 		
 		methods: {
@@ -121,7 +121,7 @@
 				console.log(this.username)
 				uni.request({
 					// #ifdef APP-PLUS
-					url: this.appurl+'/login',
+					url: this.appurl+'/item/userStorage',
 					// #endif	
 					// #ifndef APP-PLUS
 					url: '/apis/item/userStorage',
@@ -134,6 +134,7 @@
 					},
 					
 					success: data => {
+						console.log(data);
 						
 						this.actionSheetList = data.data;
 						console.log(this.actionSheetList);		

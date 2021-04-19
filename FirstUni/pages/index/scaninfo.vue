@@ -83,7 +83,12 @@
 										
 										    if (page == undefined || page == null) return;
 												//page.onLoad();
+												// #ifdef APP-PLUS
 												window.location.reload();
+												// #endif	
+												// #ifndef APP-PLUS
+												window.location.reload();
+												
 										 }	
 									});	
 								}else {
