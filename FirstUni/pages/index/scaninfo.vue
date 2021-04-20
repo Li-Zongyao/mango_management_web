@@ -88,7 +88,7 @@
 												// #endif	
 												// #ifndef APP-PLUS
 												window.location.reload();
-												
+												// #endif
 										 }	
 									});	
 								}else {

@@ -61,6 +61,7 @@
 			return {	
 				scrollHeight:'',
 				logList:[],
+				text: 'uni-app'
 			}
 		},
 		// components: {uniSegmentedControl},
@@ -72,7 +73,12 @@
 		this.loadToday();	
 		},
 		onLoad() {			
-				this.name = uni.getStorageSync('nickname')					
+				this.name = uni.getStorageSync('nickname');
+				
+				setTimeout(function () {
+				            console.log('start pulldown');
+				        }, 1000);
+				        uni.startPullDownRefresh();
 		},	
 		
 		onReady() {
@@ -81,7 +87,16 @@
 		//下拉刷新
 		onPullDownRefresh() {			
 
-		},		
+		},
+				
+		onPullDownRefresh() {
+			this.getList(1);
+		    console.log('refresh');
+		    setTimeout(function () {
+		        uni.stopPullDownRefresh();
+		    }, 1000);
+		},
+			
 		methods: {
 			/**
 			 * 加载今日数据
